@@ -1,5 +1,11 @@
 ![RoKingdom Logo](https://github.com/RoRonan729/RoKingdom/blob/main/RoKingdom%20Photos/Main%20Logo.png?raw=true)
 
+[![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UC_yFVtPpsi-WHUwOwWrL2Gw?label=Ronan%20Gupta&logo=youtube&style=for-the-badge)](https://www.youtube.com/channel/UC_yFVtPpsi-WHUwOwWrL2Gw)
+[![RoKingdom](https://img.shields.io/badge/RoKingdom-Minecraft-red?style=for-the-badge&logo=https://github.com/RoKingdom/RoKingdom/blob/main/RoKingdom%20Photos/Main%20Logo.png?raw=true&logoColor=white)](https://www.rokingdom.com)
+
+
+****
+
 > [!WARNING]
 > All images property of RoKingdom Studios and can not be used for harmfull purposes!
 
