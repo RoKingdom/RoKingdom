@@ -9,7 +9,7 @@
 > [!WARNING]
 > All images property of RoKingdom Studios and can not be used for harmfull purposes!
 
-<h2>How to Join</h2>
+<h2>How to Join (BEDROCK EOL FEB 2026)</h2>
 IP/Server Adress: play.rokingdom.com<br/>
 Bedrock port: 10594
 
