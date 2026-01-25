@@ -3,38 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation</title>
+    <title>RoKingdom Documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-dark.min.css">
     <style>
-        body { background-color: #0d1117; margin: 0; display: flex; justify-content: center; }
-        .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+        body { 
+            background-color: #0d1117; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            color: #c9d1d9;
+        }
+        /* RoKingdom Brand Header */
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        .markdown-body { 
+            box-sizing: border-box; 
+            min-width: 200px; 
+            max-width: 980px; 
+            width: 100%;
+            padding: 45px; 
+            background-color: #0d1117;
+        }
+        .img-viewer {
+            text-align: center;
+            padding: 20px;
+        }
+        .img-viewer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .breadcrumb {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
         @media (max-width: 767px) { .markdown-body { padding: 15px; } }
     </style>
 </head>
 <body>
+
+    <header>
+        <a href="#/">ROKINGDOM DOCUMENTATION</a>
+    </header>
+
     <article id="content" class="markdown-body"></article>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        // Router: Get the page name from the URL hash (e.g., #/license)
         function loadPage() {
-            const path = window.location.hash.replace('#/', '') || 'README';
-            const fileName = `${path}.md`;
+            // Get the path from the hash (e.g., #/folder/file.png -> folder/file.png)
+            let path = window.location.hash.replace(/^#\/?/, '');
+            
+            // Default to README.md if no path is provided
+            if (!path || path === "") {
+                path = "README.md";
+            }
 
-            fetch(fileName)
+            const contentDiv = document.getElementById('content');
+            const fileExtension = path.split('.').pop().toLowerCase();
+            const fileName = path.split('/').pop();
+            const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'ico'];
+
+            // Update Breadcrumb/Title
+            const breadcrumb = `<div class="breadcrumb">Root / ${path.replace(/\//g, ' / ')}</div>`;
+
+            // 1. Handle Image Files
+            if (imageExtensions.includes(fileExtension)) {
+                contentDiv.innerHTML = `
+                    ${breadcrumb}
+                    <h1>${decodeURIComponent(fileName)}</h1>
+                    <div class="img-viewer">
+                        <img src="${path}" alt="${fileName}">
+                    </div>
+                `;
+                return;
+            }
+
+            // 2. Handle Markdown and other text files
+            fetch(path)
                 .then(response => {
                     if (!response.ok) throw new Error('File not found');
                     return response.text();
                 })
                 .then(text => {
-                    document.getElementById('content').innerHTML = marked.parse(text);
+                    if (fileExtension === 'md') {
+                        // Render Markdown
+                        contentDiv.innerHTML = breadcrumb + marked.parse(text);
+                    } else {
+                        // Render Code/Text
+                        contentDiv.innerHTML = `
+                            ${breadcrumb}
+                            <h1>${decodeURIComponent(fileName)}</h1>
+                            <pre><code>${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+                        `;
+                    }
                 })
                 .catch(() => {
-                    document.getElementById('content').innerHTML = "<h1>404</h1><p>Page not found.</p>";
+                    contentDiv.innerHTML = `
+                        <h1>404</h1>
+                        <p>The file <code>${path}</code> could not be located in the repository.</p>
+                        <a href="#/" style="color: #58a6ff;">Back to Home</a>
+                    `;
                 });
         }
 
+        // Listen for URL hash changes (when user clicks a link or types a new path)
         window.addEventListener('hashchange', loadPage);
+        
+        // Load the page on initial visit
         loadPage();
     </script>
 </body>
