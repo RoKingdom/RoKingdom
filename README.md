@@ -1,6 +1,6 @@
 ![RoKingdom Logo](https://github.com/RoRonan729/RoKingdom/blob/main/RoKingdom%20Photos/Main%20Logo.png?raw=true)
 
-[![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UC_yFVtPpsi-WHUwOwWrL2Gw?label=Ronan%20Gupta&logo=youtube&style=for-the-badge)](https://www.youtube.com/channel/UC_yFVtPpsi-WHUwOwWrL2Gw)
+
 [![RoKingdom](https://img.shields.io/badge/RoKingdom-Minecraft-red?style=for-the-badge&logo=https://github.com/RoKingdom/RoKingdom/blob/main/RoKingdom%20Photos/Main%20Logo.png?raw=true&logoColor=white)](https://www.rokingdom.com)
 
 
@@ -36,8 +36,8 @@ These photos are for marketing, display, and usage only following out guidelines
 
 <h5>Owned and managed by Ronan Gupta</h5>
 
->[TikTok](https://tiktok.com/@roronan729) 
-  
->[YouTube](https://youtube.com/@ronangupta)
+
+>[![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UC_yFVtPpsi-WHUwOwWrL2Gw?label=Ronan%20Gupta&logo=youtube&style=for-the-badge)](https://www.youtube.com/channel/UC_yFVtPpsi-WHUwOwWrL2Gw)
+[![TikTok](https://img.shields.io/badge/TikTok-@roronan729-ff0050?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@roronan729)
 
 Quesions? Email: help@rokingdom.com or create an issue on our [GitHub](https://github.com/RoRonan729/RoKingdom/issues)
