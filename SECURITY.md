@@ -4,10 +4,13 @@ Currently, none of our code touches admin pannels, commands, or anything servers
 
 We are currently **Active** with development of resource packs. The versions below are the ones we will help you with.
 
-|Java Version| Bedrock Version | Supported  |
-| -----------| --------------- | ---------- |
-| 1.1.4  | 1.2.9  | :white_check_mark: |
-| 1.1.3 and below   | 1.2.8 and below   | :x: |
+> [!IMPORTANT]
+> Bedrock is no longer supported and active starting ***February 1st, 2026***
+
+|Java Version| Supported  |
+| -----------| ---------- |
+| 1.1.5  | :white_check_mark: |
+| 1.1.3 and below | :x: |
 
 1.1.4 = A4\
 1.2.9 = B9\
